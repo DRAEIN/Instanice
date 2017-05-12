@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'devise'
 
 
 group :development, :test do
