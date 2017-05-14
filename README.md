@@ -1,24 +1,19 @@
-# README
+A (almost) fully functional Instagram clone.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+featuring gems:
 
-Things you may want to cover:
+-devise ( User Authentification )
+-form_for ( easy forms )
+-paperclip ( image uploading functionality )
+-bootstrap ( styling )
 
-* Ruby version
+Functions:
 
-* System dependencies
+Users can create,update,delete,edit Posts and Comments.
+Users can comment on each others Posts.
+SignUp/SignIn and LogOut.
 
-* Configuration
+Made with:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ruby 2.2.3
+rails 5.0.2
