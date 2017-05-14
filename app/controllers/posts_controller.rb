@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+	before_action :owned_post, only: [:edit, :update, :destroy]
 
 	def index
 		@posts = Post.all
@@ -45,7 +46,7 @@ class PostsController < ApplicationController
 	def destroy
 		
 		if @post.destroy
-			flash[:success] ="Your Post has been successfully terminated"
+            flash[:success] ="Your Post has been successfully terminated"
 		    redirect_to posts_path
 		else
 			flash.now[:alert] = "Could not destroy that, sorry"
@@ -62,5 +63,12 @@ class PostsController < ApplicationController
 
 	def set_post
 		@post = Post.find(params[:id])
+	end
+
+	def owned_post
+		unless current_user == @post.user 
+		flash[:alert] = "That post doesn't belong to you!"
+		redirect_to root_path
+	    end
 	end
 end
